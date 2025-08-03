@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+  font-family: 'Inter', 'Noto Sans Sinhala', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light;
+  color: #213547;
+  background-color: #ffffff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+#root {
+  width: 100%;
+}
+
+@layer utilities {
+  .sinhala-font {
+    font-family: 'Noto Sans Sinhala', 'Inter', system-ui, sans-serif;
+  }
+}
+
+/* ✅ Added for printing support */
+@media print {
+  @page {
+    size: 80mm auto; /* Set paper size: width 80mm and height auto */
+    margin: 0;
+  }
+
+  body * {
+    visibility: hidden;
+  }
+
+  .print-content,
+  .print-content * {
+    visibility: visible;
+  }
+
+  .print-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80mm;
+    padding: 7mm;
+    background: white;
+    font-size: 15px;
+    line-height: 1.4;
+    color: black;
+  }
+}
